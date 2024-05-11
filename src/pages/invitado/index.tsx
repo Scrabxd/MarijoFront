@@ -44,34 +44,15 @@ const invitadoPage = () => {
 
   return (
     <>
-      <section className="bg-flowers bg-cover bg-no-repeat h-screen flex items-center">
-        <div className="w-10/12 flex flex-col items-center mx-auto gap-5 animate-fade-in-up animate-duration-700">
+      <section className="bg-flowers bg-cover bg-no-repeat h-screen ">
+        <div className="h-full flex flex-col items-center justify-center mx-auto gap-5 w-11/12 text-center animate-fade-in-up animate-duration-700">
           <h2 className="text-2xl font-bold">Confirmar asistencia</h2>
           <Input label="Ingresa tu nombre" name="Nombre1" onChange={(e) => setNombre1(e.target.value)}/>
 
-          {/* EN EL onPress(NO AGREGUE ONLICK PORQUE TA DEPRECADO) AGREGUE SU FUNCION AL BACKEND BUENAS NOCHES GUAPO MUAK */}
           <Button onPress={onOpen} className="font-sans w-full bg-[#3e75a9] font-bold mt-2 text-white">Confirmar</Button>
-
           <Chip color="danger">NO NIÑOS PORFAVOR</Chip>
         </div>
       </section>
-      <Modal hideCloseButton isOpen={isOpen} onOpenChange={onOpenChange} isDismissable={false} isKeyboardDismissDisabled={true}>
-        <ModalContent>
-          {(onClose) => (
-            <>
-              <ModalHeader className="flex flex-col gap-1">MARIJO XV'S</ModalHeader>
-              <ModalBody>
-                <p>GRACIAS POR TU CONFIRMACION</p>
-              </ModalBody>
-              <ModalFooter>
-                <Button color="danger" as={Link} href="/" onPress={onClose}>
-                  CERRAR
-                </Button>
-              </ModalFooter>
-            </>
-          )}
-        </ModalContent>
-      </Modal>
     </>
   );
 };
