@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Pinyon Script';
+    src: url('./assets/fonts/PinyonScript-Regular.ttf') format('truetype');
+}
+  
