@@ -8,11 +8,11 @@ function App() {
 
 
   return (
-    <Router>
+    <Router basename='/'>
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/invitado" element={<InvitadoPage />} />
-        <Route path="/invitados" element={<InvitadosPage />} />
+        <Route path="/"element={<HomePage />} />
+        <Route path="invitado" element={<InvitadoPage />} />
+        <Route path="invitados" element={<InvitadosPage />} />
       </Routes>
     </Router>
   )
