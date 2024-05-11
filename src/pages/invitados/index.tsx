@@ -1,6 +1,7 @@
 import { Input, Link, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, useDisclosure } from "@nextui-org/react";
 import { Button, Chip } from "@nextui-org/react";
 import axios from "axios";
+import Swal from "sweetalert2";
 import { useEffect, useState } from "react";
 
 const invitadosPage = () => {
@@ -20,23 +21,32 @@ const invitadosPage = () => {
       });
   }, []);
 
-
-  
-
-  onOpen = () => [
-
+  onOpen = () => {
     axios.post('https://marijoback.onrender.com/asistencia',{
       ip,
       nombre1,
       nombre2
     })
-  ]
+
+    isOpen = true
+
+    Swal.fire({
+      title:"Gracias por confirmar.",
+      text:"Gracias por confirmar tu asistencia. Ya puedes cerrar la pagina",
+      icon:"success",
+      confirmButtonText:"Cerrar"
+
+    }).then(() =>{
+      window.location.href = '/'
+    } )
+    
+}
       
 
   return (
     <>
       <section className="bg-flowers bg-cover bg-no-repeat h-screen flex items-center">
-        <div className="w-10/12 flex flex-col items-center mx-auto gap-5 animate-fade-in-up animate-duration-700">
+        <div className="w-10/12 flex flex-col items-center mx-auto gap-5 ">
           <h2 className="text-2xl font-bold">Confirmar asistencia</h2>
           <Input label="Ingresa tu nombre" name="Nombre1" onChange={(e) => setNombre1(e.target.value)} />
           <Input label="Ingresa el nombre de tu acompañante" name="Nombre2" onChange={(e) => setNombre2(e.target.value)}/>
@@ -46,24 +56,23 @@ const invitadosPage = () => {
 
           <Chip color="danger">NO NIÑOS PORFAVOR</Chip>
         </div>
+
+        <Modal hideCloseButton isOpen={isOpen} onOpenChange={onOpenChange}  isDismissable={false} isKeyboardDismissDisabled={true}>
+          <ModalContent>
+              <>
+                <ModalHeader className="flex flex-col gap-1">MARIJO XV'S</ModalHeader>
+                <ModalBody>
+                  <p>GRACIAS POR TU CONFIRMACION</p>
+                </ModalBody>
+                <ModalFooter>
+                  <Button color="danger" as={Link} href="/" >
+                    CERRAR
+                  </Button>
+                </ModalFooter>
+              </>
+          </ModalContent>
+        </Modal>
       </section>
-      <Modal hideCloseButton isOpen={isOpen} onOpenChange={onOpenChange} isDismissable={false} isKeyboardDismissDisabled={true}>
-        <ModalContent>
-          {(onClose) => (
-            <>
-              <ModalHeader className="flex flex-col gap-1">MARIJO XV'S</ModalHeader>
-              <ModalBody>
-                <p>GRACIAS POR TU CONFIRMACION</p>
-              </ModalBody>
-              <ModalFooter>
-                <Button color="danger" as={Link} href="/" onPress={onClose}>
-                  CERRAR
-                </Button>
-              </ModalFooter>
-            </>
-          )}
-        </ModalContent>
-      </Modal>
     </>
   )
 }

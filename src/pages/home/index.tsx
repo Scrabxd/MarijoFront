@@ -8,10 +8,10 @@ import { Link } from "@nextui-org/react"
 const homePage = () => {
   return (
     <>
-      <section className="bg-flowers bg-cover bg-no-repeat h-screen">
+      <section className="bg-flowers bg-cover bg-no-repeat">
         <div className="h-full flex flex-col items-center justify-center mx-auto gap-5 w-11/12 font-pinyon text-3xl text-center overflow-auto animate-fade-in-up animate-duration-700">
           {/* <Fondo /> */}
-            <div className="flex flex-col font-pinyon text-5xl mt-[1600px] lg:text-7xl">
+            <div className="flex flex-col font-pinyon text-5xl mt-[300px] lg:text-7xl">
             <div className="flex items-center justify-center mb-6">
                 <img className="w-32" src={crown} alt="" />
             </div>            

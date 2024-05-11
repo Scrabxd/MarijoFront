@@ -2,6 +2,7 @@ import { Input, Link, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, 
 import { Button, Chip } from "@nextui-org/react";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Swal from "sweetalert2";
 
 
 const invitadoPage = () => {
@@ -23,14 +24,23 @@ const invitadoPage = () => {
 
   
 
-  onOpen = () => [
+  onOpen = () => {
 
     axios.post('https://marijoback.onrender.com/asistencia',{
       ip,
       nombre1,
     })
-  ]
 
+    Swal.fire({
+      title:"Gracias por confirmar.",
+      text:"Gracias por confirmar tu asistencia. Ya puedes cerrar la pagina",
+      icon:"success",
+      confirmButtonText:"Cerrar"
+
+    }).then(() =>{
+      window.location.href = '/'
+    } )
+  }
 
   return (
     <>
