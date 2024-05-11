@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 import { useEffect, useState } from "react";
 
 const invitadosPage = () => {
-  let {isOpen, onOpen, onOpenChange} = useDisclosure();
+  let {onOpen} = useDisclosure();
   const [ip, setIp] = useState("")
   const [nombre1, setNombre1] = useState("")
   const [nombre2, setNombre2] = useState("")
@@ -28,7 +28,6 @@ const invitadosPage = () => {
       nombre2
     })
 
-    isOpen = true
 
     Swal.fire({
       title:"Gracias por confirmar.",

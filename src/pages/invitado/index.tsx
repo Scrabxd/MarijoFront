@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 
 
 const invitadoPage = () => {
-  let {isOpen, onOpen, onOpenChange} = useDisclosure();
+  let {onOpen} = useDisclosure();
 
   const [ip, setIp] = useState("")
   const [nombre1, setNombre1] = useState("")
