@@ -1,4 +1,4 @@
-import { Input, Link, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, useDisclosure } from "@nextui-org/react";
+import { Input , useDisclosure } from "@nextui-org/react";
 import { Button, Chip } from "@nextui-org/react";
 import axios from "axios";
 import { useEffect, useState } from "react";

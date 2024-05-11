@@ -1,4 +1,4 @@
-import { Input, Link, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, useDisclosure } from "@nextui-org/react";
+import { Input, useDisclosure } from "@nextui-org/react";
 import { Button, Chip } from "@nextui-org/react";
 import axios from "axios";
 import Swal from "sweetalert2";
@@ -56,22 +56,6 @@ const invitadosPage = () => {
 
           <Chip color="danger">NO NIÑOS PORFAVOR</Chip>
         </div>
-
-        <Modal hideCloseButton isOpen={isOpen} onOpenChange={onOpenChange}  isDismissable={false} isKeyboardDismissDisabled={true}>
-          <ModalContent>
-              <>
-                <ModalHeader className="flex flex-col gap-1">MARIJO XV'S</ModalHeader>
-                <ModalBody>
-                  <p>GRACIAS POR TU CONFIRMACION</p>
-                </ModalBody>
-                <ModalFooter>
-                  <Button color="danger" as={Link} href="/" >
-                    CERRAR
-                  </Button>
-                </ModalFooter>
-              </>
-          </ModalContent>
-        </Modal>
       </section>
     </>
   )
